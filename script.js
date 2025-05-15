@@ -13,12 +13,12 @@ document.getElementById("quiz-form").addEventListener("submit", function(event) 
     q1: "c",
     q2: "b",
     q3: "c",
-    q4: "c",
-    q5: "c",
-    q6: "c",
+    q4: "b",
+    q5: "b",
+    q6: "b",
     q7: "a",
-    q8: "b",
-    q9: "b",
+    q8: "d",
+    q9: "c",
     q10: "c"
   };
 
