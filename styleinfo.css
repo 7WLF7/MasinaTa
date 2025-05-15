@@ -1,0 +1,308 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background: linear-gradient(90deg, #1a1a1a, #333);
+    padding: 2rem;
+    text-align: center;
+}
+
+header h1 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 48px;
+        color: white;
+        font-style: italic;
+
+}
+body {
+    display: flex;
+    flex-direction: column; 
+    height: 100%;
+    margin: 0;
+    background-image: url('img/background1.jpg'); 
+    background-size: cover;
+    background-position: center; 
+    background-attachment: fixed;
+}
+
+.centrare{
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* centru pe orizontală */
+    align-items: center;     /* centru pe verticală */
+    background-size: cover;
+    background-position: center;
+
+}
+.blur-box {
+    width: 900px;
+    padding: 20px 30px;
+    border-radius: 15px;
+    line-height: 1.6;
+    background: rgba(1, 1, 1, 0.1); /* fundal translucid */
+    backdrop-filter: blur(12px);          /* efectul de blur în spate */
+    -webkit-backdrop-filter: blur(12px);  /* Safari */
+    box-shadow: 0 4px 30px rgba(50, 50, 50, 0.3);
+    color: rgb(255, 254, 254);
+    text-align: center;
+}
+  .textbox {
+    width: 100%;  /* se întinde cât div-ul părinte */
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* ușor opac */
+    outline: none;
+  }
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #323232;
+    padding: 1rem 0;
+}
+
+nav a {
+    color: #f2f2f2;
+    text-decoration: none;
+    margin: 0 1.5rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #e91e63;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px;
+    background-color: #333; 
+    color: #fff; 
+    bottom: 0;
+}
+
+.footer-left {
+    flex: 1;
+}
+
+.footer-right {
+    display: flex; 
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.footer-icon {
+    margin-right: 10px;
+}
+.Titlu{
+    color:#fff;
+}
+
+span.link:active {
+    color: red;  /* Culoare roșie când este apăsat */
+    cursor: pointer;  /* Schimbă cursorul la mână pentru a sugera că este interactiv */
+}
+
+.butonPaginaUrmatoare {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: rgba(255, 255, 255, 0.4); /* alb semi-transparent */
+    color: black;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  /* Hover cu fundal roșu opac */
+  .butonPaginaUrmatoare:hover {
+    background-color: rgba(255, 0, 0, 0.9);
+    color: white;
+  }
+ 
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* Containerele de casete (SpatiuGenuri) - centrarea pe centru */
+.SpatiuGenuri {
+    display: flex;
+    flex-direction: column; /* Aranjează casetele pe verticală */
+    gap: 20px; /* Spațiu între casete */
+    padding: 20px; /* Adăugăm margini pentru containerul principal */
+    align-items: center; /* Centrează casetele pe axa orizontală */
+    justify-content: center; /* Centrează casetele pe axa verticală */
+    height: 160vh; /* Asigură că containerul are înălțimea ecranului */
+}
+
+/* Stilizare pentru fiecare casetă (link) */
+.CasetaGenMuzica {
+    display: flex;
+    align-items: center; /* Centrează vertical imaginea și textul */
+    justify-content: flex-start; /* Aliniază elementele la începutul liniei */
+    background: rgba(255, 255, 255, 0.8); /* Fundal alb cu transparență */
+    border-radius: 10px; /* Colțuri rotunjite */
+    padding: 12px 20px; /* Spațiu interior mai mare pentru o casetă mai echilibrată */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Umbra subtilă */
+    transition: all 0.3s ease; /* Efect de schimbare a umbrei și creștere la hover */
+    text-decoration: none; /* Elimină sublinierea linkului */
+    height: 100px; /* Înalțime mai mare pentru a păstra un echilibru */
+    width: 550px; /* Lățime fixă pentru a păstra dimensiunea constantă */
+    max-width: 800px; /* Lățime maximă pentru a nu se întinde prea mult */
+    margin: 0 auto; /* Centrează casetele pe orizontală */
+}
+
+/* Efect de hover pentru casetă (mărirea doar a conținutului) */
+.CasetaGenMuzica:hover {
+    transform: scale(1.05); /* Mărește caseta cu 5% la hover */
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3); /* Mărește umbra la hover */
+}
+
+/* Efect de hover pentru imagine */
+.imagine-container:hover img {
+    transform: scale(1.1); /* Mărește imaginea la hover */
+    transition: transform 0.3s ease;
+}
+
+/* Stil pentru containerul imaginii */
+.imagine-container {
+    width: 70px; /* Diametrul cercului mai mare */
+    height: 70px; /* Diametrul cercului mai mare */
+    border-radius: 50%; /* Face imaginea rotundă */
+    overflow: hidden; /* Ascunde partea din afara cercului */
+    margin-right: 15px; /* Distanță între imagine și text */
+}
+
+/* Stil pentru imagine */
+.imagine-gen {
+    width: 100%; /* Face imaginea să ocupe întreaga zonă */
+    height: 100%; /* Face imaginea să ocupe întreaga zonă */
+    object-fit: cover; /* Asigură că imaginea se potrivește perfect */
+}
+
+/* Stil pentru textul din dreapta */
+.text-gen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrează textul pe axa verticală */
+    max-width: 230px; /* Lățime mai mică pentru text */
+}
+
+/* Stil pentru titlu și gen */
+.titlu-melodie {
+    font-size: 18px; /* Font pentru titlu mai mare */
+    font-weight:lighter;
+    color: #333;
+    margin: 0; /* Elimină marginea implicită */
+}
+
+.gen-muzical {
+    font-size: 18px; /* Font mai mic pentru gen */
+    font-weight: bold;
+    color: #000000;
+    margin-top: 3px; /* Spațiu între titlu și gen */
+}
+
+.wrapper {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardContact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 600px;
+    max-width: 90%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 30px;
+}
+
+.pozaContact {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pozaContact img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #4CAF50;
+}
+
+.textInfo {
+    flex: 2;
+    padding-left: 30px;
+}
+
+.textInfo ul {
+    list-style-type: none;
+}
+
+.textInfo li {
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+
+.feedbackSection {
+    width: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feedbackSection h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.feedbackSection textarea {
+    width: 100%; /* Se întinde pe toată lățimea containerului */
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: none;
+    margin-bottom: 15px;
+    font-family: inherit;
+}
+
+.feedbackSection button {
+    width: fit-content;
+    padding: 8px 16px;
+    background-color: #575e57;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.feedbackSection button:hover {
+    background-color: #45a049;
+}

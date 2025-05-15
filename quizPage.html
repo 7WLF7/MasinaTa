@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Test Grilă</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+      <nav>
+        <a href="info1.html">Acasă</a>
+        <a href="quizPage.html">Test</a>
+    </nav>
+  <div class="quiz-container">
+    <button id="toggle-theme">🌙 Dark Mode</button>
+    <h1>Test Grilă - Cunoștințe Generale</h1>
+
+    <form id="quiz-form">
+      <!-- Informații utilizator -->
+      <div class="user-info">
+        <label for="name">Nume complet:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Adresă de email:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <!-- Întrebări -->
+      <div class="question">
+        <p>1. Care este capitala Franței?</p>
+        <label><input type="radio" name="q1" value="a" /> Berlin</label>
+        <label><input type="radio" name="q1" value="b" /> Madrid</label>
+        <label><input type="radio" name="q1" value="c" /> Paris</label>
+        <label><input type="radio" name="q1" value="d" /> Roma</label>
+      </div>
+
+      <div class="question">
+        <p>2. Cine a scris „Hamlet”?</p>
+        <label><input type="radio" name="q2" value="a" /> Homer</label>
+        <label><input type="radio" name="q2" value="b" /> William Shakespeare</label>
+        <label><input type="radio" name="q2" value="c" /> Dante</label>
+        <label><input type="radio" name="q2" value="d" /> Hugo</label>
+      </div>
+
+      <div class="question">
+        <p>3. Care este cel mai mare ocean?</p>
+        <label><input type="radio" name="q3" value="a" /> Atlantic</label>
+        <label><input type="radio" name="q3" value="b" /> Indian</label>
+        <label><input type="radio" name="q3" value="c" /> Pacific</label>
+        <label><input type="radio" name="q3" value="d" /> Arctic</label>
+      </div>
+
+      <div class="question">
+        <p>4. Câte continente există?</p>
+        <label><input type="radio" name="q4" value="a" /> 5</label>
+        <label><input type="radio" name="q4" value="b" /> 6</label>
+        <label><input type="radio" name="q4" value="c" /> 7</label>
+        <label><input type="radio" name="q4" value="d" /> 8</label>
+      </div>
+
+      <div class="question">
+        <p>5. Cine a pictat „Mona Lisa”?</p>
+        <label><input type="radio" name="q5" value="a" /> Van Gogh</label>
+        <label><input type="radio" name="q5" value="b" /> Picasso</label>
+        <label><input type="radio" name="q5" value="c" /> Da Vinci</label>
+        <label><input type="radio" name="q5" value="d" /> Rembrandt</label>
+      </div>
+
+      <div class="question">
+        <p>6. Ce gaz respirăm?</p>
+        <label><input type="radio" name="q6" value="a" /> Dioxid de carbon</label>
+        <label><input type="radio" name="q6" value="b" /> Azot</label>
+        <label><input type="radio" name="q6" value="c" /> Oxigen</label>
+        <label><input type="radio" name="q6" value="d" /> Helium</label>
+      </div>
+
+      <div class="question">
+        <p>7. În ce an a avut loc Revoluția Franceză?</p>
+        <label><input type="radio" name="q7" value="a" /> 1789</label>
+        <label><input type="radio" name="q7" value="b" /> 1812</label>
+        <label><input type="radio" name="q7" value="c" /> 1776</label>
+        <label><input type="radio" name="q7" value="d" /> 1804</label>
+      </div>
+
+      <div class="question">
+        <p>8. Care este cel mai lung fluviu?</p>
+        <label><input type="radio" name="q8" value="a" /> Amazon</label>
+        <label><input type="radio" name="q8" value="b" /> Nil</label>
+        <label><input type="radio" name="q8" value="c" /> Mississippi</label>
+        <label><input type="radio" name="q8" value="d" /> Dunărea</label>
+      </div>
+
+      <div class="question">
+        <p>9. Cine a inventat becul?</p>
+        <label><input type="radio" name="q9" value="a" /> Newton</label>
+        <label><input type="radio" name="q9" value="b" /> Edison</label>
+        <label><input type="radio" name="q9" value="c" /> Tesla</label>
+        <label><input type="radio" name="q9" value="d" /> Bell</label>
+      </div>
+
+      <div class="question">
+        <p>10. Care este simbolul chimic al apei?</p>
+        <label><input type="radio" name="q10" value="a" /> HO</label>
+        <label><input type="radio" name="q10" value="b" /> O2</label>
+        <label><input type="radio" name="q10" value="c" /> H2O</label>
+        <label><input type="radio" name="q10" value="d" /> OH2</label>
+      </div>
+
+      <!-- Feedback -->
+      <div class="feedback">
+        <label for="feedback">Ai sugestii sau feedback?</label><br />
+        <textarea id="feedback" name="feedback" rows="4" placeholder="Scrie aici..." required></textarea>
+      </div>
+
+      <button type="submit">Trimite</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
