@@ -1,15 +1,8 @@
-document.getElementById("quiz-form").addEventListener("submit", function(event) {
-  event.preventDefault();
+document.getElementById("quiz-form").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-
-  if (!name || !email) {
-    document.getElementById("result").innerHTML = `<p style="color:red;">Te rugăm să completezi numele și emailul.</p>`;
-    return;
-  }
-
-  const raspunsuriCorecte = {
+  // Răspunsuri corecte
+  const answers = {
     q1: "c",
     q2: "b",
     q3: "c",
@@ -19,44 +12,31 @@ document.getElementById("quiz-form").addEventListener("submit", function(event) 
     q7: "a",
     q8: "d",
     q9: "c",
-    q10: "c"
+    q10: "c",
   };
 
-  let scor = 0;
-  let toateCompletate = true;
-
-  for (let intrebare in raspunsuriCorecte) {
-    const selected = document.querySelector(`input[name="${intrebare}"]:checked`);
-    if (!selected) {
-      toateCompletate = false;
-      break;
-    }
-    if (selected.value === raspunsuriCorecte[intrebare]) {
-      scor++;
+  let score = 0;
+  for (let key in answers) {
+    const selected = document.querySelector(`input[name="${key}"]:checked`);
+    if (selected && selected.value === answers[key]) {
+      score++;
     }
   }
 
-  if (!toateCompletate) {
-    document.getElementById("result").innerHTML = `<p style="color:red;">Te rugăm să răspunzi la toate întrebările.</p>`;
+  // Obține nume și email
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+
+  // Validare minimă
+  if (!name || !email) {
+    alert("Te rog completează toate câmpurile.");
     return;
   }
 
-const feedback = document.getElementById("feedback").value.trim();
+  // Salvare în localStorage pentru leaderboard
+  const userResult = { name, scor: score };
+  localStorage.setItem("lastUser", JSON.stringify(userResult));
 
-if (!feedback) {
-  document.getElementById("result").innerHTML = `<p style="color:red;">Te rugăm să completezi și feedbackul.</p>`;
-  return;
-}
-
-let mesaj = `<p>Mulțumim, <strong>${name}</strong>! Ai răspuns corect la <strong>${scor}</strong> din 10 întrebări.</p>`;
-mesaj += `<p>Feedbackul tău: <em>${feedback}</em></p>`;
-
-  document.getElementById("result").innerHTML = mesaj;
-});
-
-// Dark mode toggle
-document.getElementById("toggle-theme").addEventListener("click", function () {
-  document.body.classList.toggle("dark");
-  const btn = document.getElementById("toggle-theme");
-  btn.textContent = document.body.classList.contains("dark") ? "☀️ Light Mode" : "🌙 Dark Mode";
+  // Redirecționează către leaderboard
+  window.location.href = "leaderboard.html";
 });

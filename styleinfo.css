@@ -306,3 +306,19 @@ span.link:active {
 .feedbackSection button:hover {
     background-color: #45a049;
 }
+
+.progress-container {
+  width: 80%;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  margin: 20px auto;
+  height: 20px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(to right, #4caf50, #81c784);
+  transition: width 0.3s ease-in-out;
+}

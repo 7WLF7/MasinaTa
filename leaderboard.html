@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Clasament Test</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .leaderboard-container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #f4f4f4;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .leaderboard-container.dark {
+      background: #222;
+      color: #fff;
+    }
+
+    .leaderboard-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
+
+    .leaderboard-list li {
+      background: #fff;
+      margin: 10px 0;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .leaderboard-container.dark .leaderboard-list li {
+      background: #333;
+      color: #fff;
+    }
+
+    .go-back {
+      margin-top: 20px;
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .go-back:hover {
+      background: #0056b3;
+    }
+
+    #toggle-theme {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="info1.html">Learn</a>
+    <a href="quizPage.html">Test</a>
+  </nav>
+
+  <div class="leaderboard-container" id="leaderboard">
+    <button id="toggle-theme">🌙 Dark Mode</button>
+    <h1>📋 Clasament Test</h1>
+    <ul class="leaderboard-list" id="leaderboard-list">
+      <!-- Completat cu JS -->
+    </ul>
+    <a class="go-back" href="quizPage.html">← Înapoi la test</a>
+  </div>
+
+  <script>
+    const leaderboardList = document.getElementById("leaderboard-list");
+    const container = document.getElementById("leaderboard");
+
+    const hardcodedData = [
+      { name: "Andrei Popescu", scor: 8 },
+      { name: "Maria Ionescu", scor: 6 },
+      { name: "Radu Georgescu", scor: 4 },
+      { name: "Elena Dobre", scor: 3 },
+    ];
+
+    const user = JSON.parse(localStorage.getItem("lastUser"));
+    if (user) {
+      hardcodedData.push(user);
+    }
+
+    hardcodedData.sort((a, b) => b.scor - a.scor);
+
+    hardcodedData.forEach((entry, index) => {
+      const li = document.createElement("li");
+      li.innerHTML = `<strong>${index + 1}. ${entry.name}</strong><span>${entry.scor}/10</span>`;
+      leaderboardList.appendChild(li);
+    });
+
+    document.getElementById("toggle-theme").addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      container.classList.toggle("dark");
+      const btn = document.getElementById("toggle-theme");
+      btn.textContent = document.body.classList.contains("dark") ? "☀️ Light Mode" : "🌙 Dark Mode";
+    });
+  </script>
+</body>
+</html>
